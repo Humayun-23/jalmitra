@@ -1,18 +1,6 @@
-from pydantic import BaseModel, EmailStr
-from datetime import datetime
+from passlib.context import CryptContext
+pwd_context= CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-class UserBase(BaseModel):
-    id: int
-    email: EmailStr
-    password: str
-    mNumber: int
 
-class UserCreate(UserBase):
-    pass
-
-class DistrictList(BaseModel):
-    villName: str
-    dtName: str
-
-class RainFallData(BaseModel):
-    
+def hash(password: str):
+    return pwd_context.hash(password)

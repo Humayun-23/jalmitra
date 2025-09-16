@@ -11,7 +11,7 @@ class UserCreate(UserBase):
     createdat: datetime
     pass
 
-class DistrictList(BaseModel):
+class DistrictName(BaseModel):
     villname: str
     dtname: str
 
