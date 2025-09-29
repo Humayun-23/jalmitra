@@ -16,3 +16,10 @@ class Village(Base):
 class AnnualRainfall(Base):
     dtname=Column(String,nullable=False)
     annualrainfall=Column(Float,nullable=True)
+
+class Aquifer(Base):
+    __tablename__ = "aquifers"
+    id = Column(Integer, primary_key=True, index=True)
+    dtname = Column(String, index=True)
+    aquifer_type = Column(String)
+    groundwater_depth = Column(String)    
